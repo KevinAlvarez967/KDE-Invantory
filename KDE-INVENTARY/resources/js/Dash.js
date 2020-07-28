@@ -1,31 +1,72 @@
 $(document).ready(function() {
-    $('#Proveedores').DataTable();
+    $('#Proveedores').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    } );
+    
 } );
 
 $(document).ready(function() {
-    $('#Productos').DataTable();
+    $('#Productos').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    });
 } );
 
 $(document).ready(function() {
-    $('#Productos1').DataTable();
+    $('#Productos1').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    });
 } );
 
 $(document).ready(function() {
-    $('#Productos2').DataTable();
+    $('#Productos2').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    });
 } );
 
 $(document).ready(function() {
 
-    $('#Pedidos').DataTable();
+    $('#Pedidos').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    });
 } );
 
 $(document).ready(function() {
 
-    $('#Compra').DataTable();
+    $('#Compra').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    });
 } );
 
 $(document).ready(function() {
 
-    $('#DetCompra').DataTable();
+    $('#DetCompra').DataTable({
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    });
 } );
 
+
+$(document).ready(function() {
+
+    $('#productos-compra').DataTable();
+} );

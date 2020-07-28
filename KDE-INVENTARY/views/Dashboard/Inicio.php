@@ -47,5 +47,5 @@ $pagina->headerTemplate('Inicio');
 
 
 <?php
- $pagina->footerTemplate();       
+ $pagina->footerTemplate('');       
 ?>

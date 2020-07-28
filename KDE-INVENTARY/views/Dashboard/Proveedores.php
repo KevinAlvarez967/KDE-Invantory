@@ -12,9 +12,18 @@ $pagina->headerTemplate('Proveedores');
             </div>
             <hr>
     <div class="row">
-            <div class="row mt-3 ml-2 d-flex justify-content-start">
-                <a class="btn btn btn-success" href="" role="button"  data-toggle="modal" data-target="#Agregar">Agregar</a>
+            <div class="container mt-4 d-flex justify-content-end">
+                <div class="row">
+                    <form class="form-inline" method="post" id="search-form">
+                        <input id="search" name="search" class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
+            <div class="row mt-3 ml-2 d-flex justify-content-start">
+                <a class="btn btn btn-success" href="#" role="button"  onclick="openCreateModal()" >Agregar</a>
+            </div>
+     
         <div class= "col-lg-12 mt-5">
         <table id="Proveedores" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
         <thead>
@@ -27,149 +36,13 @@ $pagina->headerTemplate('Proveedores');
                 <th>Opciones</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Guillermo</td>
-                <td>Cartagena</td>
-                <td>Cartagena12_12@hotmail.com</td>
-                <td>7584-9636</td>
-                <td>Rambla Lorem ipsum, 292A 15ºH</td>
-                <td class="d-flex justify-content-center">
-                <a class="btn" role="button" data-toggle="modal" data-target="#ModalActualizar"><i class="fas fa-edit"></i></a>
-                <a class="btn" role="button" data-toggle="modal" data-target="#Eliminar"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Jimena</td>
-                <td>Escobar</td>
-                <td>Jimena1234@gmail.com</td>
-                <td>7584-3652</td>
-                <td>Rambla Lorem ipsum, 292A 15ºH</td>
-                <td class="d-flex justify-content-center">
-                <a class="btn" role="button" data-toggle="modal" data-target="#ModalActualizar"><i class="fas fa-edit"></i></a>
-                <a class="btn" role="button" data-toggle="modal" data-target="#Eliminar"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Guillermo</td>
-                <td>Cartagena</td>
-                <td>Cartagena12_12@hotmail.com</td>
-                <td>7584-9636</td>
-                <td>Rambla Lorem ipsum, 292A 15ºH</td>
-                <td class="d-flex justify-content-center">
-                <a class="btn" role="button" data-toggle="modal" data-target="#ModalActualizar"><i class="fas fa-edit"></i></a>
-                <a class="btn" role="button" data-toggle="modal" data-target="#Eliminar"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Jimena</td>
-                <td>Escobar</td>    
-                <td>Jimena1234@gmail.com</td>
-                <td>7584-3652</td>
-                <td>Rambla Lorem ipsum, 292A 15ºH</td>
-                <td class="d-flex justify-content-center">
-                <a class="btn" role="button" data-toggle="modal" data-target="#ModalActualizar"><i class="fas fa-edit"></i></a>
-                <a class="btn" role="button" data-toggle="modal" data-target="#Eliminar"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Guillermo</td>
-                <td>Cartagena</td>
-                <td>Cartagena12_12@hotmail.com</td>
-                <td>7584-9636</td>
-                <td>Rambla Lorem ipsum, 292A 15ºH</td>
-                <td class="d-flex justify-content-center">
-                <a class="btn" role="button" data-toggle="modal" data-target="#ModalActualizar"><i class="fas fa-edit"></i></a>
-                <a class="btn" role="button" data-toggle="modal" data-target="#Eliminar"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Jimena</td>
-                <td>Escobar</td>
-                <td>Jimena1234@gmail.com</td>
-                <td>7584-3652</td>
-                <td>Rambla Lorem ipsum, 292A 15ºH</td>
-                <td class="d-flex justify-content-center">
-                <a class="btn" role="button" data-toggle="modal" data-target="#ModalActualizar"><i class="fas fa-edit"></i></a>
-                <a class="btn" role="button" data-toggle="modal" data-target="#Eliminar"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
+        <tbody id="Proveedor-table">
+                      
         </tbody>
     </table>
         </div>
     </div>
 <!--Fin de area de los data table-->
-
-<!--Area de los modal-->
-<!-- Modal Actualizar -->
-<div class="modal fade bd-example-modal-lg" id="ModalActualizar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog  modal-lg" role="document">
-                <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="exampleModalLabel" >Actualizar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!--Aqui iria todo el cuerpo del modal-->
-                    <div class ="container">
-                        <div class= "row">                        
-                            <!--Area de input dentro del modal-->
-                            <div class= "col-lg-9"> 
-                                    <div class="card-body" id="comentarios">
-                                        <div class="media mt-2">
-                                            <div class="media-body">
-                                                <form>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                        
-                                                        <input type="text" class="form-control" placeholder="Nombres">
-                                                        </div>
-                                                        <div class="col">
-                                                        
-                                                        <input type="text" class="form-control" placeholder="Apellidos">
-                                                        </div>                                                    
-                                                    </div>
-                                                    <div class="form-row mt-3">                                            
-                                                        <div class="col">        
-                                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre@ejemplo.com">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">                                        
-                                                        <div class="col-lg-6 mt-3">
-                                                        
-                                                        <input type="text" class="form-control" placeholder="Telefono">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row mt-4">
-                                                        <div class="col-lg-12">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">Direccion</span>
-                                                                </div>
-                                                                <textarea class="form-control" aria-label="With textarea"></textarea>
-                                                            </div>
-
-                                                        </div>    
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            <!--Seccion de valoracion dentro de cada comentario y detalles de producto-->
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Modal agregar-->
 
@@ -177,7 +50,7 @@ $pagina->headerTemplate('Proveedores');
             <div class="modal-dialog  modal-lg" role="document">
                 <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                    <h5 class="modal-title" id="modal-title"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -191,26 +64,27 @@ $pagina->headerTemplate('Proveedores');
                                     <div class="card-body" id="comentarios">
                                         <div class="media mt-2">
                                             <div class="media-body">
-                                                <form>
+                                                <form id="Agregar-form">
+                                                <input class="invisible" type="number" id="id_proovedor" name="id_proovedor"/>
                                                     <div class="form-row">
                                                         <div class="col">
                                                         
-                                                        <input type="text" class="form-control" placeholder="Nombres">
+                                                        <input type="text" id="Nombre" name="Nombre" class="form-control" placeholder="Nombres">
                                                         </div>
                                                         <div class="col">
                                                         
-                                                        <input type="text" class="form-control" placeholder="Apellidos">
+                                                        <input type="text" id="Apellidos" name="Apellidos" class="form-control" placeholder="Apellidos">
                                                         </div>                                                    
                                                     </div>
                                                     <div class="form-row mt-3">                                            
                                                         <div class="col">        
-                                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre@ejemplo.com">
+                                                        <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Nombre@ejemplo.com">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">                                        
                                                         <div class="col-lg-6 mt-3">
                                                         
-                                                        <input type="text" class="form-control" placeholder="Telefono">
+                                                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Telefono">
                                                         </div>
                                                     </div>
                                                     <div class="form-row mt-4">
@@ -219,10 +93,14 @@ $pagina->headerTemplate('Proveedores');
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">Direccion</span>
                                                                 </div>
-                                                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                                <textarea class="form-control" id="Direccion" name="Direccion" aria-label="Direccion"></textarea>
                                                             </div>
 
                                                         </div>    
+                                                    </div>
+                                                    <div class="form-row mt-4">
+                                                            <button type="submit"  class="btn btn-secondary mr-2" data-tooltip="Cancelar" data-dismiss="modal">Cancelar</button>
+                                                            <button type="submit" class="btn btn-primary" data-tooltip="Cancelar"> Guardar </button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -234,40 +112,13 @@ $pagina->headerTemplate('Proveedores');
                     </div>
                 </div>
                 <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!--Modal Eliminar-->
-<div class="modal" id="Eliminar" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h5 class="modal-title">Advertencia</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h4>¿Esta seguro de que desea eliminar este elemento?<h4>
-      </div>
-      <div class="modal-footer border-0">
-      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
-
-
-<!--Modal Eliminar-->
 
 
 
@@ -284,5 +135,5 @@ $pagina->headerTemplate('Proveedores');
 
 
 <?php
- $pagina->footerTemplate();       
+ $pagina->footerTemplate('Proveedor.js');       
 ?>

@@ -12,71 +12,69 @@ $pagina->headerTemplate('Perfil');
                
             </div>
             <hr>
-    <div class="row">
+    <div class="row" id="usuario">
      <!--Seccion de comentarios de los usuarios acerca del producto-->
         <div class="col-lg-8 mt-5">
+        <h4 class="center indigo-text" id="title"></h4> 
                 <div class="card text-center">
+                
                     <div class="card-body" id="comentarios">
                             <!--Seccion de valoracion dentro de cada comentario y detalles de producto-->
                         <div class="d-flex justify-content-end">
-                            <a class="btn " role="button"><i class="fas fa-edit"></i></a>
+                            <a class="btn " href="#" onclick="openModalProfile()" role="button"><i class="fas fa-edit"></i></a>
                             <a class="btn " role="button"><i class="fas fa-times"></i></a>
                         </div>
                             <!--Seccion de valoracion dentro de cada comentario y detalles de producto-->
                         <div class="media mt-2">
                             <div class="media-body">
                                 <form>
+                                <input type="number" id="idusuario" disabled name="idusuario" class="form-control invisible" >
                                     <div class="form-row">
                                         <div class="col">
                                         
-                                        <input type="text" class="form-control" placeholder="Nombres">
+                                        <input type="text" id="Nombres"  disabled name="Nombres" class="form-control" placeholder="Nombres">
                                         </div>
                                         <div class="col">
                                         
-                                        <input type="text" class="form-control" placeholder="Apellidos">
+                                        <input type="text" id="Apellidos" disabled name="Apellidos" class="form-control" placeholder="Apellidos">
                                         </div>
                                     </div>
                                     <div class="form-row mt-3 ml-1">
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre@ejemplo.com">
+                                        <input type="email"  id="Correo" disabled name="Correo" class="form-control" id="exampleFormControlInput1" placeholder="Nombre@ejemplo.com">
                                     </div>
                                     <div class="form-row mt-4">
                                     <div class="col">
                                         
-                                        <input type="text" class="form-control" placeholder="Usuario">
+                                        <input type="text" id="Usuario" disabled name="Usuario" class="form-control" placeholder="Usuario">
                                         </div>
-                                        <div class="col">
-                                        
-                                        <input type="text" class="form-control" placeholder="Contraseña">
+                                        <div class="col-6">
+                                            
+                                            <input type="text" id="telefono" disabled name="telefono" class="form-control" placeholder="Telefono">
                                         </div>
                                     </div>
+                                   
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
         </div>
-        <div class="col-lg-3 mt-3">
+        <div class="col-lg-4 mt-3">
             <div class="card text-center">
                     <div class="card-body" id="comentarios">
                             <!--Seccion de valoracion dentro de cada comentario y detalles de producto-->
-                        <div class="media">
-                            <div class="media-body d-flex justify-content-end ml-5">
-                                <img src="../../Resources/img/pc.jpg" style="Width: 80px; Height:80px;" class="mr-1" alt="...">
-                            </div>
-                            <div class="media-body d-flex justify-content-end">
-                            <a class="btn" role="button"><i class="fas fa-edit"></i></a>
-                            </div>
+                        <div class="media">                        
                         </div>
                         <div class="media">
                             <div class="d-flex justify-content-end mt-3">
                                 <h6>Usuario:<h6>
-                                <h6 class="ml-2">Natalia Berrios<h6>
+                                <h6 class="ml-2" id="Usuario1" name="Usuario1" ><h6>
                             </div>
                         </div>
                         <div class="media">
                             <div class="d-flex justify-content-start mt-3">
                                 <h6>Correo:<h6>
-                                <h6 class="ml-2">Nat@gmail.com<h6>
+                                <h6 class="ml-2" id="Correo1" name="Correo1" >Nat@gmail.com<h6>
                             </div>
                         </div>
                     </div>
@@ -88,6 +86,75 @@ $pagina->headerTemplate('Perfil');
 
 
 
+<!--Area de los modal-->
+<!--Modal agregar-->
+<div class="modal fade bd-example-modal-lg" id="profile-modal" name="profile-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--Aqui iria todo el cuerpo del modal-->
+                    <div class ="container">
+                        <div class= "row d-flex justify-content-end">                        
+                            <!--Area de input dentro del modal-->
+                            <div class= "col-lg-9"> 
+                                    <div class="card-body" id="comentarios">
+                                        <div class="media mt-2">
+                                            <div class="media-body">
+                                            <form id="edit-perfil" name="edit-perfil">
+                                                <input type="number" id="idusuario" name="idusuario" class="form-control invisible" >
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                        
+                                                        <input type="text" id="Nombres1" name="Nombres1" class="form-control" placeholder="Nombres">
+                                                        </div>
+                                                        <div class="col">
+                                                        
+                                                        <input type="text" id="Apellidos1" name="Apellidos1" class="form-control" placeholder="Apellidos">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row mt-3 ml-1">
+                                                        <input type="email"  id="email" name="email" class="form-control"  placeholder="Nombre@ejemplo.com">
+                                                    </div>
+                                                    <div class="form-row mt-4">
+                                                    <div class="col">
+                                                        
+                                                        <input type="text" id="User" name="User" class="form-control" placeholder="Usuario">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            
+                                                            <input type="text" id="telefono1" name="telefono1" class="form-control" placeholder="Telefono">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <button type="submit"  class="btn btn-secondary mt-2" data-tooltip="Cancelar" data-dismiss="modal">Cancelar</button>
+                                                        <button type="submit" class="btn btn-primary mt-2" data-tooltip="Cancelar"> Guardar </button>
+                                                    </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!--Seccion de valoracion dentro de cada comentario y detalles de producto-->
+                        </div>
+                    </div>                
+                <div class="modal-footer">                    
+                    <!-- <button type="submit"  class="btn btn-secondary" data-tooltip="Cancelar" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" data-tooltip="Cancelar"> Guardar </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--Fin de Area de los modal-->
+
 
 
 
@@ -98,5 +165,5 @@ $pagina->headerTemplate('Perfil');
 
 
 <?php
- $pagina->footerTemplate();       
+ $pagina->footerTemplate('Cuenta.js');       
 ?>

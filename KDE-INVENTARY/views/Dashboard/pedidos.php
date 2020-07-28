@@ -8,6 +8,14 @@ $pagina->headerTemplate('Pedidos');
             <h3 class="mt-5" id="TituloPag"><i class="fas fa-sort-size-up-alt mr-3"></i>Pedidos</h3>
             
         </div>
+        <div class="container mt-4 d-flex justify-content-end">
+                <div class="row">
+                    <form class="form-inline" method="post" id="search-form">
+                        <input id="search" name="search" class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
         <hr>   
     <div class="row"> 
         <div class="col-lg-12 mt-5">
@@ -23,40 +31,8 @@ $pagina->headerTemplate('Pedidos');
                         <th>Opciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>12/12/2020</td>
-                        <td>En cocina</td>
-                        <td>Guillermo Cartagena</td>
-                        <td>$10.43</td>
-                        <td class="d-flex justify-content-center">
-                            <a class="btn btn-outline-info" href=".php" role="button" data-toggle="modal" data-target="#Moreinfo">Ver mas</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>12/12/2020</td>
-                        <td>Entregado</td>
-                        <td>Kevin Oswaldo</td>
-                        <td>$5.21</td>
-                        <td class="d-flex justify-content-center">
-                            <a class="btn btn-outline-info" href=".php" role="button" data-toggle="modal" data-target="#Moreinfo">Ver mas</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>12/12/2020</td>
-                        <td>En cocina</td>
-                        <td>Juan Anaya</td>
-                        <td>$13.03</td>
-                        <td class="d-flex justify-content-center">
-                            <a class="btn btn-outline-info" href=".php" role="button" data-toggle="modal" data-target="#Moreinfo">Ver mas</a>
-                        </td>
-                    </tr>
+                <tbody id="pedido-table">
+                                    
                 </tbody>
             </table>
         </div>
@@ -71,10 +47,19 @@ $pagina->headerTemplate('Pedidos');
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body border-0">
-                        <p>Descripcion:<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby=""></p>
-                        <p>Precio:<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby=""></p>
-                        <p>Cantidad:<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby=""></p>
+                    <div class="modal-body border-0" id="detallepedido">
+                    <table id="Pedidos" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Productos</th>
+                                <th>Precio unitario</th>
+                                <th>Cantidad</th>                               
+                            </tr>
+                        </thead>
+                        <tbody id="productos-pedidos">
+                                                    
+                        </tbody>
+                    </table>   
                     </div>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-success" data-dismiss="modal">Volver</button>
@@ -88,5 +73,5 @@ $pagina->headerTemplate('Pedidos');
 </div>
 
 <?php
-$pagina->footerTemplate();
+$pagina->footerTemplate('Detallepedido.js');
 ?>

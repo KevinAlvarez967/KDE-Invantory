@@ -32,12 +32,12 @@ class Page
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav">                       
                         <li class="nav-item active">
-                        <a class="nav-link" href="CreacionPedidos.php">Crear pedidos <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="VisualizacionPedidos.php">Detalle Pedidos<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                        <a class="nav-link" href="VisualizacionPedidos.php">Pedidos<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="Crearpedidos.php"> Crear Pedidos<span class="sr-only">(current)</span></a>
                         </li>
                 </ul>
                 </div>
@@ -53,9 +53,9 @@ class Page
                         </a>
                     
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="CreacionPedidos.php">Crear pedidos</a>
+                        <a class="dropdown-item" href="Crearpedidos.php">Crear pedidos</a>
                         <a class="dropdown-item" href="VisualizacionPedidos.php">Pedidos</a>
-                        <a class="dropdown-item" href="login.php">Cerrar sesion</a>
+                        <a class="dropdown-item" href="#" onclick="signOff()">Cerrar sesion</a>
                         </div>
                     </div>
                     </nav>
@@ -71,7 +71,7 @@ class Page
 
 
 
-    Public function footerTemplate()
+    Public function footerTemplate($controller)
     {
         print
         ('  
@@ -79,16 +79,20 @@ class Page
             <!-- Optional JavaScript -->
             <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
             <script src="../../resources/js/jquery-3.4.1.min.js"></script>
-    <script src="../../resources/js/bootstrap.min.js"></script>
-    <script src="../../Resources/js/morris.min.js" type="text/javascript"></script> 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="../../resources/js/JavascriptGraficos.js"></script>
-    <script src="../../resources/js/shards.min.js"></script>
-    <script src="../../resources/js/jquery.dataTables.min.js"></script>        
-    <script src="../../resources/js/dataTables.responsive.min.js"></script>  
-    <script src="../../resources/js/responsive.bootstrap4.min.js"></script>
-    <script src="../../resources/js/dataTables.bootstrap4.min.js"></script>   
-    <script src="../../resources/js/Dash.js"></script>
+            <script src="../../resources/js/bootstrap.min.js"></script>
+            <script src="../../Resources/js/morris.min.js" type="text/javascript"></script> 
+            <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+            <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+            <script src="../../resources/js/JavascriptGraficos.js"></script>
+            <script src="../../resources/js/shards.min.js"></script>
+            <script src="../../resources/js/jquery.dataTables.min.js"></script>        
+            <script src="../../resources/js/dataTables.responsive.min.js"></script>  
+            <script src="../../resources/js/responsive.bootstrap4.min.js"></script>
+            <script src="../../resources/js/dataTables.bootstrap4.min.js"></script>   
+            <script src="../../resources/js/Dash.js"></script>
+            <script type="text/javascript" src="../../Core/helpers/Components.js"></script>
+            <script type="text/javascript" src="../../Core/controllers/Empleado/account.js"></script>
+            <script type="text/javascript" src="../../Core/controllers/Empleado/'.$controller.'"></script>
             </body>
             </html> 
             ');
