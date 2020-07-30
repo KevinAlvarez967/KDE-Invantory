@@ -3,7 +3,7 @@ require_once('../../helpers/Database.php');
 require_once('../../helpers/Validator.php');
 require_once('../../Model/Usuariosgene.php');
 
-
+//prueba
 if(isset($_GET['action']))
 { 
     session_start();
