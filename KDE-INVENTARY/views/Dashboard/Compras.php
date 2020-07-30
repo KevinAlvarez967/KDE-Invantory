@@ -30,7 +30,6 @@ $pagina->headerTemplate('Compras');
         <thead>
             <tr>
                 <th>Fecha de la compra</th>
-                <th>Total de la compra</th>
                 <th>Proveedor</th>
                 <th>Opciones</th>
             </tr>

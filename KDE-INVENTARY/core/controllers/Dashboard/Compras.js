@@ -27,8 +27,7 @@ function fillTable( dataset )
        // Se crean y concatenan las filas de la tabla con los datos de cada registro.
        content += `
             <tr>
-                <td>${row.fecha_compra}</td>
-                <td>${row.total}</td>
+                <td>${row.fecha_compra}</td>              
                 <td>${row.nombre} ${row.apellido}</td>
                 <td class="d-flex justify-content-center">
                 <a class="btn" role="button" href="DetalleCompras.php?id=${row.id_compra}"><i class="far fa-align-justify"></i></a>               

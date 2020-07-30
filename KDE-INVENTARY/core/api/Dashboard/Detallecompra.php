@@ -18,7 +18,7 @@ if(isset($_GET['action'])){
                     $_POST = $detcompra->validateForm($_POST);
                         if($detcompra->setIdcompra($_POST['id_compra'])){ 
                             if($detcompra->setCantidad($_POST['cantidad'])){
-                                if($detcompra->setPrecio($_POST['Precio'])){
+                              
                                     if(isset($_POST['Producto'])){
                                         if($detcompra->setIdproducto($_POST['Producto'])){
                                             if($detcompra->CrearDetalleCompra()){
@@ -33,9 +33,6 @@ if(isset($_GET['action'])){
                                 }else{
                                     $result['exception'] = 'Seleccione un Producto';
                                 }
-                            }else{
-                                $result['exception'] = 'Precio incorrecto';
-                            }
                         }else{
                             $result['exception'] = 'Cantidad incorrecta';
                         }

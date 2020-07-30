@@ -142,23 +142,23 @@ class Page
         print
         ('  
         
-                    <!-- Optional JavaScript -->
-                    <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
-            <script src="../../resources/js/jquery-3.4.1.min.js"></script>
-            <script src="../../resources/js/bootstrap.min.js"></script>
-            <script src="../../Resources/js/morris.min.js" type="text/javascript"></script> 
-            <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-            <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
-            <script src="../../resources/js/JavascriptGraficos.js"></script>
-            <script src="../../resources/js/shards.min.js"></script>
-            <script src="../../resources/js/jquery.dataTables.min.js"></script>        
-            <script src="../../resources/js/dataTables.responsive.min.js"></script>  
-            <script src="../../resources/js/responsive.bootstrap4.min.js"></script>
-            <script src="../../resources/js/dataTables.bootstrap4.min.js"></script>   
-            <script type="text/javascript" src="../../Core/helpers/Components.js"></script>
-            <script type="text/javascript" src="../../Core/controllers/dashboard/account.js"></script>
-            <script src="../../resources/js/Dash.js"></script>
-            <script type="text/javascript" src="../../Core/controllers/Dashboard/'.$controller.'"></script>
+                        <!-- Optional JavaScript -->
+                        <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
+                        <script src="../../resources/js/jquery-3.4.1.min.js"></script>
+                        <script src="../../resources/js/bootstrap.min.js"></script>
+                        <script src="../../Resources/js/morris.min.js" type="text/javascript"></script> 
+                        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+                        <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+                        <script src="../../resources/js/JavascriptGraficos.js"></script>
+                        <script src="../../resources/js/shards.min.js"></script>
+                        <script src="../../resources/js/jquery.dataTables.min.js"></script>        
+                        <script src="../../resources/js/dataTables.responsive.min.js"></script>  
+                        <script src="../../resources/js/responsive.bootstrap4.min.js"></script>
+                        <script src="../../resources/js/dataTables.bootstrap4.min.js"></script>   
+                        <script type="text/javascript" src="../../Core/helpers/Components.js"></script>
+                        <script type="text/javascript" src="../../Core/controllers/dashboard/account.js"></script>
+                        <script src="../../resources/js/Dash.js"></script>
+                        <script type="text/javascript" src="../../Core/controllers/Dashboard/'.$controller.'"></script>
             </body>
             </html> 
             ');

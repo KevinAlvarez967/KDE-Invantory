@@ -86,8 +86,8 @@ public function setIdproveedor($value)
 
  public function LeerCompras()
  {
-     $sql = 'SELECT SUM (Det_compra.Precio) as Total, id_compra, fecha_compra, proveedor.nombre, proveedor.apellido from Det_compra INNER JOIN
-     compra USING (id_compra) INNER JOIN proveedor USING(id_proveedor) GROUP BY  id_compra, fecha_compra, proveedor.nombre, proveedor.apellido ';
+     $sql = 'SELECT  id_compra, fecha_compra, proveedor.nombre, proveedor.apellido from compra
+     INNER JOIN proveedor USING(id_proveedor)   ';
      $params = null;
      return Database::getRows($sql, $params);
  }
