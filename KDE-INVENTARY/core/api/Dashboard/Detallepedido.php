@@ -6,7 +6,7 @@ require_once('../../Model/Detpedido.php');
 
 
 
-
+//API utilizada para gestionar las funciones de detalle pedido
 
 if(isset($_GET['action'])){
 
@@ -17,6 +17,7 @@ if(isset($_GET['action'])){
     $result = array('status' => 0, 'message' => null, 'exception' => null);
         if(isset($_SESSION['id_usuario_geren'])){
             switch($_GET['action']){
+                //Case para leer todos los pedidos en base
                 case 'readAll':
                     if ($result['dataset'] = $pedido->readAllPedidos()) {
                          $result['status'] = 1;
@@ -42,6 +43,7 @@ if(isset($_GET['action'])){
                             $result['exception'] = 'Ingrese un valor para buscar';
                         }
                     break;
+                    //Case utilizado para leer los productos de cada pedido mediante el id detalle
                     case 'readOne':
                         if($pedido->setIddetpedido($_POST['id_det_pedido'])){
                             if($result['dataset'] = $pedido->readAllProductoFromPedidos()){

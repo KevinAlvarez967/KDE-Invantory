@@ -3,6 +3,7 @@ require_once('../../helpers/Database.php');
 require_once('../../helpers/validator.php');
 require_once('../../Model/Subcategoria.php');
 
+//APi para gestionar las funciones de subcategoria en el sistema
 
 if(isset($_GET['action'])){
     session_start();

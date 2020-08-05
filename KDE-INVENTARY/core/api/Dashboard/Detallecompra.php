@@ -4,7 +4,7 @@ require_once('../../helpers/validator.php');
 require_once('../../Model/Detcompra.php');
 
 
-
+//Api utilizada para gestionar las funciones para el detalle de la compra 
 
 if(isset($_GET['action'])){
     session_start();
@@ -14,6 +14,7 @@ if(isset($_GET['action'])){
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     if(isset($_SESSION['id_usuario_geren'])){
         switch($_GET['action']){
+            //Case utilizado para crear el detalle de la compra
                 case 'create':
                     $_POST = $detcompra->validateForm($_POST);
                         if($detcompra->setIdcompra($_POST['id_compra'])){ 
@@ -51,6 +52,7 @@ if(isset($_GET['action'])){
                         $result['exception'] = 'detalle compra incorrecta';
                     }
                 break;
+                //case utilizado para leer todos los productos y mostrarlos en el select del detalle compra
                  case 'readProductos':
                     if($detcompra->setIdcompra($_POST['id_compra'])){
                         if($result['dataset'] = $detcompra->LeerProductos()){

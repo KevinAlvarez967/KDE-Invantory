@@ -3,7 +3,7 @@ require_once('../../helpers/Database.php');
 require_once('../../helpers/Validator.php');
 require_once('../../Model/Usuariosgene.php');
 
-//prueba
+
 if(isset($_GET['action']))
 { 
     session_start();
@@ -22,6 +22,7 @@ if(isset($_GET['action']))
                     $result['exception'] = 'Ocurrió un problema al cerrar la sesión';
                 }
                 break;
+                //Case que lee el perfil del usuario logeado
                 case 'readProfile':
                     if ($usuarios->setIdusuariogeren($_SESSION['id_usuario_geren'])) {
                         if ($result['dataset'] = $usuarios->LeerUnUsuario()) {
@@ -40,6 +41,7 @@ if(isset($_GET['action']))
                         $result['exception'] = 'No hay usuarios registrados';
                     }
                 break;
+                //Case para editar el perfil del usuario logueado
                 case 'editProfile':
                     if ($usuarios->setIdusuariogeren($_SESSION['id_usuario_geren'])) {
                         if ($usuarios->LeerUnUsuario()) {

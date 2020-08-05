@@ -7,7 +7,7 @@ require_once('../../Model/Proveedor.php');
 
 
 
-
+//API para gestionar las funciones de la tabla proveedores dentro del sistema
 if(isset($_GET['action'])){
 
     session_start();

@@ -5,7 +5,7 @@ require_once('../../Model/Producto.php');
 
 
 
-
+//API utilizada para gestionar las funciones de la tabla productos dentro del sistema
 if(isset($_GET['action'])){
     session_start();
 
@@ -15,6 +15,7 @@ if(isset($_GET['action'])){
 
     if(isset($_SESSION['id_usuario_geren'])){
         switch($_GET['action']){
+            //Case para leer todos los productos existentes en base
             case 'readAll':
                 if ($result['dataset'] = $producto->LeerProductos()) {
                      $result['status'] = 1;
@@ -22,7 +23,7 @@ if(isset($_GET['action'])){
                     $result['exception'] = 'No se encontraron productos';
                  }
              break;
-             
+             //Case utilizado para buscar un producto y mostrarlo en las datatables
              case 'search':
                 $_POST = $producto->validateForm($_POST);
                 if($_POST['search'] != ''){
@@ -41,6 +42,7 @@ if(isset($_GET['action'])){
                     $result['exception'] = 'Ingrese un valor para buscar';
                 }
             break;
+            //Case utilizado para leer un producto y mostrarlo en el modal para actualizarlo
              case 'readOne':
                 if($producto->setIdproducto($_POST['id_producto'])){
                     if($result['dataset'] = $producto->LeerUnProducto()){

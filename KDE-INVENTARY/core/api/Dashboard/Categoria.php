@@ -4,7 +4,7 @@ require_once('../../helpers/validator.php');
 require_once('../../Model/Categoria.php');
 
 
-
+//Api que controla lo esencial de categorias utilizado en el programa
 if(isset($_GET['action'])){
     session_start();
 
@@ -14,6 +14,7 @@ if(isset($_GET['action'])){
 
     if(isset($_SESSION['id_usuario_geren'])){
         switch($_GET['action']){
+            //Case utilizado para llenar los selects 
             case 'readAll':
                 if ($result['dataset'] = $categoria->LeerCategorias()) {
                      $result['status'] = 1;

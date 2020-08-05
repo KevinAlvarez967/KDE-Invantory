@@ -4,7 +4,7 @@ require_once('../../helpers/validator.php');
 require_once('../../Model/Compra.php');
 require_once('../../Model/Proveedor.php');
 
-
+//Api utilizada para gestionar la tabla de compras 
 if(isset($_GET['action'])){
     session_start();
         $compra = new Compra;
@@ -13,6 +13,7 @@ if(isset($_GET['action'])){
 
         if(isset($_SESSION['id_usuario_geren'])){
             switch($_GET['action']){
+                //Case para leer todas las compras dentro de la tabla
                 case 'readAll':
                     if ($result['dataset'] = $compra->LeerCompras()) {
                          $result['status'] = 1;
@@ -20,6 +21,7 @@ if(isset($_GET['action'])){
                         $result['exception'] = 'No se encontraron compras disponibles';
                      }
                  break;
+                 //Case para leer los proveedores que llena el select de proveedores al momento de crear una compra
                  case 'readProveedores':
                     if ($result['dataset'] = $proveedores->LeerProvedores()) {
                          $result['status'] = 1;
@@ -62,6 +64,7 @@ if(isset($_GET['action'])){
                             $result['exception'] = 'Proveedor incorrecto';
                         }
                     break;
+                    //Case utilizado para leer una compra, para poder llenar el model de actualizacion
                     case 'readOne':
                         if($compra->setIdcompra($_POST['id_compra'])){
                             if($result['dataset'] = $compra->LeerUnaCompra()){

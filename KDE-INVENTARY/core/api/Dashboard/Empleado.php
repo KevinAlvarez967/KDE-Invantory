@@ -4,7 +4,7 @@ require_once('../../helpers/validator.php');
 require_once('../../Model/Usuario.php');
 
 
-
+//Api que gestiona todas las funciones del usuario empleado dentro de la vista de admin
 
 if(isset($_GET['action'])){
 
@@ -16,6 +16,7 @@ if(isset($_GET['action'])){
 
     if(isset($_SESSION['id_usuario_geren'])){
         switch($_GET['action']){
+            //Case utilizado para leer todos los usuarios en base
             case 'readAll':
                 if ($result['dataset'] = $usuario->LeerUsuarios()) {
                      $result['status'] = 1;
@@ -23,6 +24,7 @@ if(isset($_GET['action'])){
                     $result['exception'] = 'No se encontraron Usuarios';
                  }
              break;
+             //Case para leer los estados del usuario
              case 'readEstados':
                 if ($result['dataset'] = $usuario->LeerEstados()) {
                      $result['status'] = 1;
@@ -30,6 +32,7 @@ if(isset($_GET['action'])){
                     $result['exception'] = 'No se encontraron Estados';
                  }
              break;
+             //Case para leer los tipos de usuarios que existen
              case 'readTipos':
                 if ($result['dataset'] = $usuario->LeerTipo()) {
                      $result['status'] = 1;
